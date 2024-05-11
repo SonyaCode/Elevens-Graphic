@@ -74,8 +74,6 @@ class DrawPanel extends JPanel implements MouseListener {
             }
         }
 
-
-
     }
 
     public void mouseReleased(MouseEvent e) { }

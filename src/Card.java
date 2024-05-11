@@ -112,7 +112,7 @@ public class Card {
 
     public static void switchOneCard(ArrayList<Card> hand, int index) {
         int randomCardIndex = (int) (Math.random() * deck.size());
-        Card randomCard = deck.get(randomCardIndex);
+        Card randomCard = deck.remove(randomCardIndex);
         hand.set(index, randomCard);
     }
 }
