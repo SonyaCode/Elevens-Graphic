@@ -15,6 +15,8 @@ public class Card {
     private Rectangle cardBox;
     private boolean highlight;
 
+    public static ArrayList<Card> deck = Card.buildDeck();
+
     public Card(String suit, String value) {
         this.suit = suit;
         this.value = value;
@@ -98,13 +100,19 @@ public class Card {
     }
 
     public static ArrayList<Card> buildHand() {
-        ArrayList<Card> deck = Card.buildDeck();
         ArrayList<Card> hand = new ArrayList<Card>();
+
         for (int i = 0; i < 9; i++) {
             int r = (int)(Math.random()*deck.size());
             Card c = deck.remove(r);
             hand.add(c);
         }
         return hand;
+    }
+
+    public static void switchOneCard(ArrayList<Card> hand, int index) {
+        int randomCardIndex = (int) (Math.random() * deck.size());
+        Card randomCard = deck.get(randomCardIndex);
+        hand.set(index, randomCard);
     }
 }
